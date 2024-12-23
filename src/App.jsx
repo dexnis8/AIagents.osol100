@@ -132,7 +132,7 @@ const App = () => {
         console.error("Error fetching data:", error);
       });
   }, []);
-
+  console.log(coins);
   return (
     <div
       className={`${
@@ -196,7 +196,7 @@ const TableView = ({ coins }) => {
               #
             </th>
             <th className="border border-gray-300 dark:border-gray-700 px-4 py-2">
-              Coin
+              Name
             </th>
             <th className="border border-gray-300 dark:border-gray-700 px-4 py-2">
               Price
@@ -214,7 +214,7 @@ const TableView = ({ coins }) => {
               Circulating Supply
             </th>
             <th className="border border-gray-300 dark:border-gray-700 px-4 py-2">
-              Graph
+              Chart
             </th>
           </tr>
         </thead>
@@ -222,18 +222,23 @@ const TableView = ({ coins }) => {
           {coins.map((coin, index) => (
             <tr
               key={coin?.id}
-              className="hover:bg-gray-50 hover:text-white dark:hover:bg-gray-700"
+              className="hover:bg-gray-50 hover:text-white dark:hover:bg-gray-400"
             >
               <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
                 {index + 1}
               </td>
-              <td className="border border-gray-300 dark:border-gray-700 px-4 py-2 flex items-center">
+              <td className="border  border-gray-300 dark:border-gray-700 px-4 py-4 flex items-center">
                 <img
                   src={coin?.image}
                   alt={coin?.name}
-                  className="w-5 h-5 mr-2"
+                  className="w-7 h-7 rounded-full mr-2"
                 />{" "}
-                {coin?.name}
+                <div className="flex flex-col">
+                  <span>{coin?.name}</span>{" "}
+                  <span className="text-gray-500 uppercase text-xs font-semibold">
+                    {coin?.symbol}
+                  </span>
+                </div>
               </td>
               <td className="border border-gray-300 dark:border-gray-700 px-4 py-2">
                 ${coin?.current_price?.toLocaleString()}
@@ -302,7 +307,7 @@ const CardView = ({ coins }) => {
           <img
             src={coin?.image}
             alt={coin?.name}
-            className="w-12 h-12 mx-auto"
+            className="w-12 h-12 mx-auto rounded-full"
           />
           <h2 className="text-lg font-semibold text-center mt-2">
             {coin?.name}
