@@ -109,94 +109,11 @@ const COIN_LIST = [
   "lucy-ai",
   "agent-rogue",
 ];
-// const COIN_LIST = [
-//   "FARTCOIN",
-//   "GRASS",
-//   "GOAT",
-//   "ACT",
-//   "ZEREBRO",
-//   "NOS",
-//   "GRIFFAIN",
-//   "TAI",
-//   "ARC",
-//   "ELIZA",
-//   "ALCH",
-//   "MEMESAI",
-//   "DEGENAI",
-//   "VWAIFU",
-//   "BULLY",
-//   "KWEEN",
-//   "GRIFT",
-//   "FXN",
-//   "HAT",
-//   "SHOGGOTH",
-//   "TANK",
-//   "WORM",
-//   "DRUGS",
-//   "BONGO",
-//   "GNON",
-//   "AVA",
-//   "OPUS",
-//   "OBOT",
-//   "PROJECT89",
-//   "CHAOS",
-//   "MEOW",
-//   "KOKO",
-//   "KHAI",
-//   "PIPPIN",
-//   "MAX",
-//   "AIMONICA",
-//   "AVB",
-//   "FOREST",
-//   "SOLARIS",
-//   "SNS",
-//   "MOE",
-//   "UBC",
-//   "MIZUKI",
-//   "NAI",
-//   "FATHA",
-//   "CABAL",
-//   "TNSR",
-//   "AROK",
-//   "SHEGEN",
-//   "SPERG",
-//   "OMEGA",
-//   "THALES",
-//   "KEKE",
-//   "SHORNY",
-//   "QUASAR",
-//   "ROPIRITO",
-//   "KOLIN",
-//   "KWANT",
-//   "DITH",
-//   "DUCKAI",
-//   "CENTS",
-//   "IQ",
-//   "BINARY",
-//   "WMM",
-//   "YOUSIM",
-//   "SENSUS",
-//   "OCADA",
-//   "SINGULARRY",
-//   "NAVAL",
-//   "KIRA",
-//   "KRA",
-//   "BROT",
-//   "E/ACC",
-//   "GRIN",
-//   "LIMBO",
-//   "SIZE",
-//   "NEROBOSS",
-//   "GMIKA",
-//   "CONVO",
-//   "SQR",
-//   "UGLYDOG",
-//   "GEMXBT",
-// ];
+
 const App = () => {
   const [coins, setCoins] = useState([]);
-  const [view, setView] = useState("table"); // 'table' or 'card'
-  const [darkMode, setDarkMode] = useState(false);
+  const [view, setView] = useState("card"); // 'table' or 'card'
+  const [darkMode, setDarkMode] = useState(true);
 
   useEffect(() => {
     axios
@@ -224,7 +141,7 @@ const App = () => {
     >
       <div className="container mx-auto p-4">
         <header className="flex justify-between items-center mb-4">
-          <h1 className="text-2xl font-bold">COINS</h1>
+          <h1 className="text-2xl font-bold">AI AGENT TOP 100</h1>
           <div className="flex items-center space-x-4">
             <button
               onClick={() => setDarkMode(!darkMode)}
